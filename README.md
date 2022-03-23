@@ -4,12 +4,6 @@ Hobby project created for timepass utility
 
 functionalities
 
-User should be able to create dish category
--able to create dishes
--create combination of dishes
--create timing for dishes
--generate timetable for 7 days and save it to a name
--should be able to ask What to cook today and get an answer
 
 
 
