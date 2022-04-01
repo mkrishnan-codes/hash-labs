@@ -28,11 +28,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Install NPM modules
-    - run: npm install
+      run: npm install
     - name: Run Tests
-    - run: npm test
+      run: npm test
     - name: Build
-    - run: npm run build
+      run: npm run build
     - name: Deploy
       run: |
         git config --global user.name $user_name
