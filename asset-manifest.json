@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.c0419a63.chunk.css",
-    "main.js": "/static/js/main.1d22e087.chunk.js",
-    "main.js.map": "/static/js/main.1d22e087.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.ca6de341.js",
-    "runtime-main.js.map": "/static/js/runtime-main.ca6de341.js.map",
-    "static/js/2.27e5c33b.chunk.js": "/static/js/2.27e5c33b.chunk.js",
-    "static/js/2.27e5c33b.chunk.js.map": "/static/js/2.27e5c33b.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.c0419a63.chunk.css.map": "/static/css/main.c0419a63.chunk.css.map",
-    "static/js/2.27e5c33b.chunk.js.LICENSE.txt": "/static/js/2.27e5c33b.chunk.js.LICENSE.txt",
-    "static/media/logo.b2e5a01e.svg": "/static/media/logo.b2e5a01e.svg"
+    "main.css": "/hash-labs/static/css/main.c0419a63.chunk.css",
+    "main.js": "/hash-labs/static/js/main.2bc3caee.chunk.js",
+    "main.js.map": "/hash-labs/static/js/main.2bc3caee.chunk.js.map",
+    "runtime-main.js": "/hash-labs/static/js/runtime-main.f09aaed8.js",
+    "runtime-main.js.map": "/hash-labs/static/js/runtime-main.f09aaed8.js.map",
+    "static/js/2.27e5c33b.chunk.js": "/hash-labs/static/js/2.27e5c33b.chunk.js",
+    "static/js/2.27e5c33b.chunk.js.map": "/hash-labs/static/js/2.27e5c33b.chunk.js.map",
+    "index.html": "/hash-labs/index.html",
+    "static/css/main.c0419a63.chunk.css.map": "/hash-labs/static/css/main.c0419a63.chunk.css.map",
+    "static/js/2.27e5c33b.chunk.js.LICENSE.txt": "/hash-labs/static/js/2.27e5c33b.chunk.js.LICENSE.txt",
+    "static/media/logo.b2e5a01e.svg": "/hash-labs/static/media/logo.b2e5a01e.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ca6de341.js",
+    "static/js/runtime-main.f09aaed8.js",
     "static/js/2.27e5c33b.chunk.js",
     "static/css/main.c0419a63.chunk.css",
-    "static/js/main.1d22e087.chunk.js"
+    "static/js/main.2bc3caee.chunk.js"
   ]
 }
