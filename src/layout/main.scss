@@ -1,0 +1,14 @@
+$header-ht:65px;
+$left-bar-max: 250px;
+$page-pad:10px;
+
+.inner-page {
+    transition: margin-left .5s;
+
+    &.open {
+        margin-left: $left-bar-max;
+    }
+    padding-top: $header-ht + $page-pad;
+    padding-left: $page-pad;
+    padding-right: $page-pad;
+}
