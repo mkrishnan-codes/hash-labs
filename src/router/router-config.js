@@ -1,13 +1,14 @@
 // import { Login } from "../components/Login/Login";
 import NotFound from "../features/404/NotFound";
-import { Home } from "../components/Home/Home";
-import { Mock } from "../components/Mock/Mock";
-import MockInit from "../components/Mock/MockInit";
+import Home  from "../features/home/Home";
+// import { Mock } from "../components/Mock/Mock";
+// import MockInit from "../components/Mock/MockInit";
 
 export const routes = [
 	{
 		path: "/",
 		exact: true,
+		inner: true,
 		component: Home
 	},
 	{

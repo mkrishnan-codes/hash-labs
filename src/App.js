@@ -1,25 +1,20 @@
 import React from 'react';
 // import './App.scss';
 import { AppRouter } from './router/Router';
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
-import { Provider } from 'react-redux';
-import { Store } from './store/store';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import lightBlue from '@mui/material/colors/lightBlue';
+import red from '@mui/material/colors/red';
 const theme = createTheme({
   palette: {
-    primary: purple,
-    secondary: green,
+    primary: red,
+    secondary: lightBlue,
   }
 });
 const App = () => {
   return (
-    <Provider store={Store}>
       <ThemeProvider theme={theme}>
         <AppRouter />
       </ThemeProvider>
-    </Provider>
-
   );
 }
 

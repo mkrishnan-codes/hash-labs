@@ -1,8 +1,9 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import { routes } from './router-config';
 import AppLayout from '../layout/AppLayout';
 const RouteWithSubRoutes = (route) => {
+	console.log(route,"rout");
 	return (
 		<AppLayout inner={route.inner}>
 			<Route
@@ -17,12 +18,12 @@ const RouteWithSubRoutes = (route) => {
 }
 export const AppRouter = () => {
 	return (
-		<BrowserRouter>
+		<HashRouter>
 			<Switch>
 				{routes.map((route, i) => (
 					<RouteWithSubRoutes key={i} {...route} />
 				))}
 			</Switch>
-		</BrowserRouter >
+		</HashRouter >
 	);
 }
