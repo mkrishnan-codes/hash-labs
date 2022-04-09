@@ -2,7 +2,7 @@
 import React from 'react';
 // import { Sidebar } from '../Sidebar/Sidebar';
 import Header from './Header';
-import './main.scss';
+// import './main.scss';
 export const Main = (props) => {
 	// const [open, setopen] = useState(false);
 	// const toggle = () => {
