@@ -9,9 +9,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
-import WorkIcon from '@mui/icons-material/Work';
-import BeachAccessIcon from '@mui/icons-material/BeachAccess';
-import { AcUnit, Air, Cloud, Opacity, Thermostat, Umbrella, WbSunny } from '@mui/icons-material';
+import { AcUnit, Air, Cloud, Opacity, Umbrella, WbSunny } from '@mui/icons-material';
 const sample = {
     "coord": {
         "lon": 77.6729,
@@ -94,6 +92,7 @@ const Weather = () => {
         if (pos) {
             getWeather();
         }
+        // eslint-disable-next-line
     }, [pos]);
     const temp = weatherData ? `${weatherData.main.temp}°C` : ""
     return (
