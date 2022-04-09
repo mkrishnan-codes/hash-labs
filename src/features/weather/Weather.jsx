@@ -59,7 +59,7 @@ const Weather = () => {
         }
     }
     const getWeather = async () => {
-        return fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.latitude}&lon=${pos.longitude}&appid=${API_KEY}`)
+        return fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.latitude}&lon=${pos.longitude}&appid=${API_KEY}&units=metric`)
             .then(response => response.json())
             .then(data => {
                 setweatherData(data);
@@ -80,7 +80,7 @@ const Weather = () => {
                     <Paper variant="outlined">{weatherData.weather[0].description}</Paper>
                 </Grid>
                 <Grid item xs={6} md={4}>
-                    <Paper variant="outlined" />
+                    <Paper variant="outlined" >{weatherData.main.temp}</Paper>
 
                 </Grid>
                 </Grid>
