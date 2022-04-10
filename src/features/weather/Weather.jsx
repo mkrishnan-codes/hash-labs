@@ -10,6 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import { AcUnit, Air, Cloud, Opacity, Umbrella, WbSunny } from '@mui/icons-material';
+import Loader from '../../common/Loader';
 const sample = {
     "coord": {
         "lon": 77.6729,
@@ -56,26 +57,27 @@ const sample = {
 const WeatherIcon = ({ name }) => {
     const caseInsensitiveName = name.toLowerCase();
     if (caseInsensitiveName.search("cloud") > -1) {
-        return <Cloud color="primary" fontSize='large'/>
+        return <Cloud color="primary" fontSize='large' />
     }
     if (caseInsensitiveName.search("rain") > -1) {
-        return <Umbrella color="primary"  fontSize='large'/>
+        return <Umbrella color="primary" fontSize='large' />
     }
     if (caseInsensitiveName.search("snow") > -1) {
-        return <AcUnit color="primary"  fontSize='large'/>
+        return <AcUnit color="primary" fontSize='large' />
     }
     return <WbSunny color="primary" fontSize='large' />
 }
 const Weather = () => {
     const [weatherData, setweatherData] = useState(sample);
     const [pos, setPos] = useState(null);
+    const [loaderLabel, setLoaderLabel] = useState("Getting location");
     const getLocation = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
                 setPos(position.coords);
             });
         } else {
-            console.log("No location");
+            setLoaderLabel("Please allow location to see weather");
         }
     }
     const getWeather = async () => {
@@ -90,21 +92,22 @@ const Weather = () => {
     }, []);
     useEffect(() => {
         if (pos) {
+            setLoaderLabel("Getting weather");
             getWeather();
         }
         // eslint-disable-next-line
     }, [pos]);
     const temp = weatherData ? `${weatherData.main.temp}°C` : ""
-    return (
+    return pos === null || weatherData === null ? <Loader label={loaderLabel} /> : (
         <Box sx={{ flexGrow: 1, p: 4 }}>
             <Grid container spacing={3}>
                 <Grid item xs={12} md={4}>
                     <Paper elevation={3} variant="outlined">
-                        <Box sx={{ flexGrow: 1, p: 2, textAlign:"center"  }}>
+                        <Box sx={{ flexGrow: 1, p: 2, textAlign: "center" }}>
                             <Typography variant="h4" gutterBottom component="div">
                                 {weatherData.name},{weatherData.sys.country}
                             </Typography>
-                            <Box sx={{ flexGrow: 1, p: 4}}>
+                            <Box sx={{ flexGrow: 1, p: 4 }}>
                                 <Typography variant="h5" gutterBottom component="div">
                                     {weatherData.weather[0].description}
                                 </Typography>
