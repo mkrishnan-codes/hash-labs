@@ -46,6 +46,8 @@
     "gh-pages": "^3.2.3"
   },
   "jest": {
-    "transformIgnorePatterns": ["/node_modules/(?!@mui)"]
+    "transformIgnorePatterns": [
+      "/node_modules/(?!@mui)"
+    ]
   }
 }
