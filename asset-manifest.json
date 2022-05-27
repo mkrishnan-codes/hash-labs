@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/hash-labs/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/hash-labs/static/js/main.aeb78c24.chunk.js",
-    "main.js.map": "/hash-labs/static/js/main.aeb78c24.chunk.js.map",
+    "main.js": "/hash-labs/static/js/main.dcd95b64.chunk.js",
+    "main.js.map": "/hash-labs/static/js/main.dcd95b64.chunk.js.map",
     "runtime-main.js": "/hash-labs/static/js/runtime-main.f09aaed8.js",
     "runtime-main.js.map": "/hash-labs/static/js/runtime-main.f09aaed8.js.map",
-    "static/js/2.c5fb2867.chunk.js": "/hash-labs/static/js/2.c5fb2867.chunk.js",
-    "static/js/2.c5fb2867.chunk.js.map": "/hash-labs/static/js/2.c5fb2867.chunk.js.map",
+    "static/js/2.8ef4c2a9.chunk.js": "/hash-labs/static/js/2.8ef4c2a9.chunk.js",
+    "static/js/2.8ef4c2a9.chunk.js.map": "/hash-labs/static/js/2.8ef4c2a9.chunk.js.map",
     "index.html": "/hash-labs/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/hash-labs/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.c5fb2867.chunk.js.LICENSE.txt": "/hash-labs/static/js/2.c5fb2867.chunk.js.LICENSE.txt"
+    "static/js/2.8ef4c2a9.chunk.js.LICENSE.txt": "/hash-labs/static/js/2.8ef4c2a9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f09aaed8.js",
-    "static/js/2.c5fb2867.chunk.js",
+    "static/js/2.8ef4c2a9.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.aeb78c24.chunk.js"
+    "static/js/main.dcd95b64.chunk.js"
   ]
 }
