@@ -20,16 +20,16 @@ function BrandCompare() {
     const add = useCallback(
         () => {
             const brs = [...brands, getBrand(brands.length)];
+            console.log(brs,"brs");
             setbrands(brs);
         },
-        //eslint-disable-next-line
-        [],
+        [brands],
     )
 
     return (
         <Box sx={{ flexGrow: 1, p: 4 }}>
         
-                {brands.map((brnd) => <Brand {...brnd} onUpdate={onUpdate} />)}
+                {brands.map((brnd) => <Brand key={brnd.id} {...brnd} onUpdate={onUpdate} />)}
      
             <Box sx={{ '& > :not(style)': { m: 1 } }}>
                 <Fab color="primary" aria-label="add" onClick={add}>
