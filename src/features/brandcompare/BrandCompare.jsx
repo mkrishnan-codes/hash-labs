@@ -3,7 +3,7 @@ import React, { useCallback, useState } from 'react'
 import Brand from './Brand';
 import AddIcon from '@mui/icons-material/Add';
 import HelpModal from './HelpModal';
-
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 const getBrand = (id) => ({
     id,
     brand: String.fromCharCode(97 + id),
@@ -17,17 +17,17 @@ const fabStyle = {
     position: 'absolute',
     bottom: 16,
     right: 16,
-  };
+};
 function BrandCompare() {
     const [brands, setbrands] = useState([getBrand(0)]);
     const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = useCallback(() => {
-    setOpen(true);
-  },[open]);
-  const handleClose =  useCallback(() => {
-    setOpen(false);
-  },[open]);
+    const handleClickOpen = useCallback(() => {
+        setOpen(true);
+    }, []);
+    const handleClose = useCallback(() => {
+        setOpen(false);
+    }, []);
     const onUpdate = useCallback((attr, id, value) => {
         let newArr = [...brands];
         newArr[id] = { ...newArr[id], [attr]: value }
@@ -36,7 +36,7 @@ function BrandCompare() {
     const add = useCallback(
         () => {
             const brs = [...brands, getBrand(brands.length)];
-            console.log(brs,"brs");
+            console.log(brs, "brs");
             setbrands(brs);
         },
         [brands],
@@ -44,13 +44,18 @@ function BrandCompare() {
 
     return (
         <Box sx={{ flexGrow: 1, p: 4 }}>
-        
-                {brands.map((brnd) => <Brand key={brnd.id} {...brnd} onUpdate={onUpdate} />)}
-        <HelpModal/>
-            <Box sx={{ '& > :not(style)': { m: 1 } }}>
-                <Fab color="primary" sx={fabStyle} aria-label="add" onClick={add}>
+
+            {brands.map((brnd) => <Brand key={brnd.id} {...brnd} onUpdate={onUpdate} />)}
+            <HelpModal open={open} handleClose={handleClose} />
+            <Box sx={{ '& > :not(style)': { m: 1 }, ...fabStyle }}>
+                <Fab color="primary" aria-label="add" onClick={handleClickOpen}>
+                    <QuestionMarkIcon />
+
+                </Fab>
+                <Fab color="primary" aria-label="add" onClick={add}>
                     <AddIcon />
                 </Fab>
+
 
             </Box>
         </Box>
