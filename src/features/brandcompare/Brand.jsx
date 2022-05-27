@@ -1,6 +1,6 @@
 import { Box, Paper, TextField } from '@mui/material'
 import React, { useMemo } from 'react'
-const calc = (w, p) => (w / p).toFixed(2);
+const calc = (w, p) => p !== 0 ? (w / p).toFixed(2) : "";
 export default function Brand({ id, brand,
     weightUnits,
     price,

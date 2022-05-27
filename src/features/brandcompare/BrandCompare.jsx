@@ -4,7 +4,7 @@ import Brand from './Brand';
 import AddIcon from '@mui/icons-material/Add';
 const getBrand = (id) => ({
     id,
-    brand: "",
+    brand: String.fromCharCode(97 + id),
     weightUnits: 0,
     price: 0,
     pricePerUnit: 0
