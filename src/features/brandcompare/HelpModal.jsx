@@ -58,7 +58,7 @@ export default function HelpModal({open, handleClose}) {
         </BootstrapDialogTitle>
         <DialogContent dividers>
           <Typography gutterBottom>
-            This can calculate price per unit of a brand and add more brands using add button. It can be usefull while having 2 brands where calculating value for money is difficult while on a super market. Eg: Unilever Product costs 19 for 135 grams and Palmolive costs 27.5 for 175 grams, which one is worth the penny?
+            This can calculate price per unit of a brand and add more brands using add button. It can be usefull while having 2 brands where calculating value for money is difficult while on a super market. Eg: Unilever Product costs 19 for 135 grams and Palmolive costs 27.5 for 175 grams, which one is worthy?
           </Typography>
         </DialogContent>
         <DialogActions>

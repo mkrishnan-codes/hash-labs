@@ -48,7 +48,7 @@ function BrandCompare() {
             {brands.map((brnd) => <Brand key={brnd.id} {...brnd} onUpdate={onUpdate} />)}
             <HelpModal open={open} handleClose={handleClose} />
             <Box sx={{ '& > :not(style)': { m: 1 }, ...fabStyle }}>
-                <Fab color="primary" aria-label="add" onClick={handleClickOpen}>
+                <Fab color="secondary" aria-label="add" onClick={handleClickOpen}>
                     <QuestionMarkIcon />
 
                 </Fab>
