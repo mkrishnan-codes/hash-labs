@@ -3,7 +3,8 @@ import NotFound from "../features/404/NotFound";
 import Home  from "../features/home/Home";
 // import { Mock } from "../components/Mock/Mock";
 // import MockInit from "../components/Mock/MockInit";
-
+import Weather from '../features/weather/Weather';
+import BrandCompare from "../features/brandcompare/BrandCompare"
 export const routes = [
 	{
 		path: "/",
@@ -25,6 +26,18 @@ export const routes = [
 		// 	  component: Cart
 		// 	}
 		//   ]
+	},
+	{
+		path: "/weather",
+		exact: true,
+		inner: true,
+		component: Weather
+	},
+	{
+		path: "/brandcompare",
+		exact: true,
+		inner: true,
+		component: BrandCompare
 	},
 	{
 		path: '*',
