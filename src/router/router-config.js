@@ -1,6 +1,6 @@
 // import { Login } from "../components/Login/Login";
 import NotFound from "../features/404/NotFound";
-import Home  from "../features/home/Home";
+// import Home  from "../features/home/Home";
 // import { Mock } from "../components/Mock/Mock";
 // import MockInit from "../components/Mock/MockInit";
 import Weather from '../features/weather/Weather';
@@ -10,12 +10,12 @@ export const routes = [
 		path: "/",
 		exact: true,
 		inner: true,
-		component: Home
+		component: BrandCompare
 	},
 	{
 		path: "/home",
 		inner: true,
-		component: Home,
+		component: BrandCompare,
 		//   routes: [
 		// 	{
 		// 	  path: "/tacos/bus",

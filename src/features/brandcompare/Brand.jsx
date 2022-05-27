@@ -14,18 +14,12 @@ export default function Brand({ id, brand,
 
         <Box
             component="form"
-            sx={{
-                '& .MuiTextField-root': { m: 1, width: '25ch' },
-            }}
             noValidate
             autoComplete="off"
         >
-            <Paper elevation={2} sx={{ flexGrow: 1, p: 4, m: 4 }}>
-                <div>
+            <Paper elevation={2} sx={{ p: 4, m: 1 }}>
                     <TextField id="inpBrand" label="Brand" variant="standard" value={brand} onChange={(evt) => onUpdate('brand', id, evt.currentTarget.value)} />
-                </div>
                 <div>
-
                     <TextField type="number" id="inpWeightUnits" label="Weight Units" variant="standard" value={weightUnits} onChange={(evt) => onUpdate('weightUnits', id, evt.currentTarget.value)} />
                     <TextField type="number" id="inpPrice" label="Price" variant="standard" value={price} onChange={(evt) => onUpdate('price', id, evt.currentTarget.value)} />
                 </div>

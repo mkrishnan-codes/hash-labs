@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { useHistory } from "react-router-dom";
 
-const pages = [{ name: 'Weather', path: "/weather" }, { name: "Brand Price Compare", path: "/brandcompare" }];
+const pages = [{ name: "Brand Price Compare", path: "/brandcompare" }, { name: 'Weather', path: "/weather" }];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
