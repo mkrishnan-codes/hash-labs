@@ -1,4 +1,4 @@
-import { Box, Fab } from '@mui/material'
+import { Box, Fab, Grid } from '@mui/material'
 import React, { useCallback, useState } from 'react'
 import Brand from './Brand';
 import AddIcon from '@mui/icons-material/Add';
@@ -14,7 +14,7 @@ const getBrand = (id) => ({
 )
 
 const fabStyle = {
-    position: 'absolute',
+    position: 'fixed',
     bottom: 16,
     right: 16,
 };
@@ -36,28 +36,27 @@ function BrandCompare() {
     const add = useCallback(
         () => {
             const brs = [...brands, getBrand(brands.length)];
-            console.log(brs, "brs");
             setbrands(brs);
         },
         [brands],
     )
 
     return (
-        <Box sx={{ flexGrow: 1, p: 4 }}>
+        <Box sx={{ flexGrow: 1, p: 4, position:'relative' }}>
+            <Grid container spacing={2}>
+            {brands.map((brnd) =><Grid item xs={12} md={4} lg={3} key={brnd.id}> <Brand  {...brnd} onUpdate={onUpdate} /></Grid>)}
 
-            {brands.map((brnd) => <Brand key={brnd.id} {...brnd} onUpdate={onUpdate} />)}
+            </Grid>
             <HelpModal open={open} handleClose={handleClose} />
             <Box sx={{ '& > :not(style)': { m: 1 }, ...fabStyle }}>
-                <Fab color="secondary" aria-label="add" onClick={handleClickOpen}>
-                    <QuestionMarkIcon />
+            <Fab color="secondary" aria-label="add" onClick={handleClickOpen}>
+                <QuestionMarkIcon />
 
-                </Fab>
-                <Fab color="primary" aria-label="add" onClick={add}>
-                    <AddIcon />
-                </Fab>
-
-
-            </Box>
+            </Fab>
+            <Fab color="primary" aria-label="add" onClick={add}>
+                <AddIcon />
+            </Fab>
+        </Box>
         </Box>
     )
 }

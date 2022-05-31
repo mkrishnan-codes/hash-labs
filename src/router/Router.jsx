@@ -3,7 +3,6 @@ import { HashRouter, Route, Switch } from "react-router-dom";
 import { routes } from './router-config';
 import AppLayout from '../layout/AppLayout';
 const RouteWithSubRoutes = (route) => {
-	console.log(route,"rout");
 	return (
 		<AppLayout inner={route.inner}>
 			<Route
