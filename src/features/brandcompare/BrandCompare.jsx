@@ -4,6 +4,7 @@ import Brand from './Brand';
 import AddIcon from '@mui/icons-material/Add';
 import HelpModal from './HelpModal';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import { Sort } from '@mui/icons-material';
 const getBrand = (id) => ({
     id,
     brand: String.fromCharCode(97 + id),
@@ -18,10 +19,18 @@ const fabStyle = {
     bottom: 20,
     right: 16,
 };
+// const sort = (needSort,arr=[],sortOn) => {
+//     if(!needSort)return arr;
+//     let newArray = [...arr];
+//     newArray.sort((a,b) => a[sortOn] - b[sortOn])
+//     return newArray;
+// }
+const calc = (w, p) => w !== 0 ? (p / w).toFixed(2) : "";
+
 function BrandCompare() {
     const [brands, setbrands] = useState([getBrand(0)]);
     const [open, setOpen] = React.useState(false);
-
+// const [sorted, setsorted] = useState(false)
     const handleClickOpen = useCallback(() => {
         setOpen(true);
     }, []);
@@ -30,7 +39,9 @@ function BrandCompare() {
     }, []);
     const onUpdate = useCallback((attr, id, value) => {
         let newArr = [...brands];
-        newArr[id] = { ...newArr[id], [attr]: value }
+        const pricePerUnit = calc(newArr[id]['weightUnits'],newArr[id]['price']);
+        newArr[id] = { ...newArr[id], [attr]: value,pricePerUnit }
+
         setbrands(newArr);
     }, [brands])
     const add = useCallback(
@@ -40,7 +51,10 @@ function BrandCompare() {
         },
         [brands],
     )
-
+    // let cals = sorted?
+    // .sort((a,b) => a.last_nom - b.last_nom)
+// cons
+// const sortedBrands = useMemo(() => sort(sorted,brands,''), [brands,sorted])
     return (
         <Box sx={{ flexGrow: 1, p: 4, position: 'relative' }}>
             <Typography variant="h5" gutterBottom component="div">
@@ -61,6 +75,9 @@ function BrandCompare() {
                 <Fab color="secondary" aria-label="add" onClick={handleClickOpen}>
                     <QuestionMarkIcon />
 
+                </Fab>
+                <Fab color="primary" aria-label="add" onClick={handleClickOpen}>
+<Sort/>
                 </Fab>
                 <Fab color="primary" aria-label="add" onClick={add}>
                     <AddIcon />

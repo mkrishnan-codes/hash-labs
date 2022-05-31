@@ -1,12 +1,13 @@
 import { Grid, Paper, TextField } from '@mui/material'
-import React, { useMemo } from 'react'
-const calc = (w, p) => w !== 0 ? (p / w).toFixed(2) : "";
+import React from 'react'
+// const calc = (w, p) => w !== 0 ? (p / w).toFixed(2) : "";
 export default function Brand({ id, brand,
     weightUnits,
     price,
-    onUpdate
+    onUpdate,
+    pricePerUnit
 }) {
-    const calculation = useMemo(() => calc(weightUnits, price), [weightUnits, price]);
+    // const calculation = useMemo(() => calc(weightUnits, price), [weightUnits, price]);
 
 
 
@@ -27,7 +28,7 @@ export default function Brand({ id, brand,
 
                 </Grid>
                 <Grid item xs={12}>
-                    <TextField fullWidth type="number" id="inpPricePerUnit" label="Price per unit" variant="filled" contentEditable={false} value={calculation} />
+                    <TextField fullWidth type="number" id="inpPricePerUnit" label="Price per unit" variant="filled" contentEditable={false} value={pricePerUnit} />
 
                 </Grid>
             </Grid>
