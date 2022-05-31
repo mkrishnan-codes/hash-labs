@@ -1,4 +1,4 @@
-import { Box, Fab, Grid } from '@mui/material'
+import { Box, Fab, Grid, Typography } from '@mui/material'
 import React, { useCallback, useState } from 'react'
 import Brand from './Brand';
 import AddIcon from '@mui/icons-material/Add';
@@ -15,7 +15,7 @@ const getBrand = (id) => ({
 
 const fabStyle = {
     position: 'fixed',
-    bottom: 16,
+    bottom: 20,
     right: 16,
 };
 function BrandCompare() {
@@ -42,22 +42,31 @@ function BrandCompare() {
     )
 
     return (
-        <Box sx={{ flexGrow: 1, p: 4, position:'relative' }}>
+        <Box sx={{ flexGrow: 1, p: 4, position: 'relative' }}>
+            <Typography variant="h5" gutterBottom component="div">
+                Brand Price comparing tool
+            </Typography>
             <Grid container spacing={2}>
-            {brands.map((brnd) =><Grid item xs={12} md={4} lg={3} key={brnd.id}> <Brand  {...brnd} onUpdate={onUpdate} /></Grid>)}
+                {brands.map((brnd) => <Grid item xs={12} md={4} lg={3} key={brnd.id}> <Brand  {...brnd} onUpdate={onUpdate} /></Grid>)}
 
             </Grid>
+            {/* <Box sx={{ '& > :not(style)': { m: 5 } }}>
+                <Typography variant="overline" gutterBottom>
+                    Made in Bangalore with &#128154;
+                </Typography>
+            </Box> */}
+
             <HelpModal open={open} handleClose={handleClose} />
             <Box sx={{ '& > :not(style)': { m: 1 }, ...fabStyle }}>
-            <Fab color="secondary" aria-label="add" onClick={handleClickOpen}>
-                <QuestionMarkIcon />
+                <Fab color="secondary" aria-label="add" onClick={handleClickOpen}>
+                    <QuestionMarkIcon />
 
-            </Fab>
-            <Fab color="primary" aria-label="add" onClick={add}>
-                <AddIcon />
-            </Fab>
-        </Box>
-        </Box>
+                </Fab>
+                <Fab color="primary" aria-label="add" onClick={add}>
+                    <AddIcon />
+                </Fab>
+            </Box>
+        </Box >
     )
 }
 
