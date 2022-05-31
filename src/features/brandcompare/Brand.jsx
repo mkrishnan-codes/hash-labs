@@ -1,30 +1,30 @@
 import { Grid, Paper, TextField } from '@mui/material'
-import React from 'react'
-// const calc = (w, p) => w !== 0 ? (p / w).toFixed(2) : "";
+import React, { useCallback } from 'react'
 export default function Brand({ id, brand,
     weightUnits,
     price,
     onUpdate,
     pricePerUnit
 }) {
-    // const calculation = useMemo(() => calc(weightUnits, price), [weightUnits, price]);
-
-
+    const sendPayload = useCallback((attr, value) => {
+        const payload = { weightUnits, price, id, pricePerUnit, brand };
+        onUpdate({ ...payload, [attr]: value });
+    }, [weightUnits, price, id, pricePerUnit, onUpdate, brand])
 
     return (
 
         <Paper elevation={2} sx={{ p: 4, m: 1 }}>
             <Grid container spacing={2}>
                 <Grid item xs={12}>
-                    <TextField fullWidth id="inpBrand" label="Brand" placeholder="Eg: Unilever" variant="standard" value={brand} onChange={(evt) => onUpdate('brand', id, evt.currentTarget.value)} />
+                    <TextField fullWidth id="inpBrand" label="Brand" placeholder="Eg: Unilever" variant="standard" value={brand} onChange={(evt) => sendPayload('brand', evt.currentTarget.value)} />
 
                 </Grid>
                 <Grid item xs={6}>
-                    <TextField fullWidth type="number" id="inpWeightUnits" label="Weight Units" variant="standard" value={weightUnits} onChange={(evt) => onUpdate('weightUnits', id, evt.currentTarget.value)} />
+                    <TextField fullWidth type="number" id="inpWeightUnits" label="Weight Units" variant="standard" value={weightUnits} onChange={(evt) => sendPayload('weightUnits', evt.currentTarget.value)} />
 
                 </Grid>
                 <Grid item xs={6}>
-                    <TextField fullWidth type="number" id="inpPrice" label="Price" variant="standard" value={price} onChange={(evt) => onUpdate('price', id, evt.currentTarget.value)} />
+                    <TextField fullWidth type="number" id="inpPrice" label="Price" variant="standard" value={price} onChange={(evt) => sendPayload('price', evt.currentTarget.value)} />
 
                 </Grid>
                 <Grid item xs={12}>
