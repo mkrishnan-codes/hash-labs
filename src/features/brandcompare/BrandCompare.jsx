@@ -7,6 +7,7 @@ import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import { Sort } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import { add, selectBrands, sort, update } from './brandSlice';
+import { Analytics } from '../../utils/analytics';
 
 const fabStyle = {
     position: 'fixed',
@@ -20,6 +21,7 @@ function BrandCompare() {
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = useCallback(() => {
         setOpen(true);
+        Analytics.PUSH({ event: 'help_open' })
     }, []);
     const [openSnack, setOpenSnack] = React.useState(false);
 
@@ -43,15 +45,17 @@ function BrandCompare() {
     const addBrand = useCallback(
         () => {
             dispatch(add())
+            Analytics.PUSH({ event: 'add_brands' })
         },
         [dispatch],
     )
     const sortBrand = useCallback(
         () => {
             dispatch(sort());
+            Analytics.PUSH({ event: 'sort_brands', brands })
             doOpenSnack();
         },
-        [dispatch, doOpenSnack],
+        [dispatch, doOpenSnack, brands],
     )
 
 
