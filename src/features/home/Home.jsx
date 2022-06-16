@@ -1,10 +1,10 @@
 import React from 'react';
-import Weather from '../weather/Weather';
+import { ContentTable } from './ContentTable';
 
 const HomePage = () => {
 	return (
 		<div>
-			<Weather/>
+			<ContentTable></ContentTable>
 		</div>
 	);
 }
