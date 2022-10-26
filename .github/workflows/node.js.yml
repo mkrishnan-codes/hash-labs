@@ -42,6 +42,6 @@ jobs:
       env:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
-        gh_pat: ${{ secrets.HASH_LABS_DEPLOY }}
+        github_token: ${{ secrets.HASH_LAB_DEPLOY_TOKEN }}
         repository: ${{ github.repository }}
   
