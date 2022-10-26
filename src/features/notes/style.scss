@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: space-around;
     height: calc(100vh - 68.5px);
+    position: relative;
 
     .notes-text {
         overflow: hidden;
@@ -11,11 +12,17 @@
         height: 80vh;
         width: 90%;
         padding: 30px;
-        // border: none;
+        border: none;
         font-size: 24px;
 
         &:focus {
             outline: none;
         }
+    }
+
+    .status-chip {
+        position: absolute;
+        bottom: 32px;
+        left: 60px;
     }
 }
