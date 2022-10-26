@@ -1,0 +1,2 @@
+.notes-wrapper{display:flex;align-items:center;justify-content:space-around;height:calc(100vh - 68.5px);position:relative}.notes-wrapper .notes-text{overflow:hidden;word-wrap:break-word;resize:none;height:80vh;width:90%;padding:30px;border:none;font-size:24px}.notes-wrapper .notes-text:focus{outline:none}.notes-wrapper .status-chip{position:absolute;bottom:32px;left:60px}
+/*# sourceMappingURL=5.d4e06974.chunk.css.map */
