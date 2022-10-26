@@ -13,12 +13,12 @@ export const routes = [
     path: "/",
     exact: true,
     inner: true,
-    component: BrandCompare,
+    component: Notes,
   },
   {
     path: "/home",
     inner: true,
-    component: BrandCompare,
+    component: Notes,
     //   routes: [
     // 	{
     // 	  path: "/tacos/bus",
