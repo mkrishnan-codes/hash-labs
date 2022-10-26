@@ -13,20 +13,15 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { useHistory } from "react-router-dom";
 
-const pages = [{ name: "Brand Price Compare", path: "/brandcompare" }, { name: 'Weather', path: "/weather" }];
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [{ name: "Brand Price Compare", path: "/brandcompare" }, { name: 'Weather', path: "/weather" },{ name: 'Notes', path: "/notes" }];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  //   const [anchorElUser, setAnchorElUser] = React.useState(null);
   let history = useHistory();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  //   const handleOpenUserMenu = (event) => {
-  //     setAnchorElUser(event.currentTarget);
-  //   };
-
+ 
   const handleCloseNavMenu = (page) => {
     if (page) {
       history.push(page.path);
@@ -34,9 +29,7 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
-  //   const handleCloseUserMenu = () => {
-  //     setAnchorElUser(null);
-  //   };
+ 
   return (
     <AppBar position="static">
       <Container maxWidth="xl">

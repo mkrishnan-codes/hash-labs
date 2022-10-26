@@ -1,0 +1,21 @@
+.notes-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100vh - 68.5px);
+
+    .notes-text {
+        overflow: hidden;
+        word-wrap: break-word;
+        resize: none;
+        height: 80vh;
+        width: 90%;
+        padding: 30px;
+        // border: none;
+        font-size: 24px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
