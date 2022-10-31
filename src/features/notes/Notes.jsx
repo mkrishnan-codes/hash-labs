@@ -19,10 +19,13 @@ export default function Notes() {
   }, [text]);
   useEffect(() => {
     settext(localStorage.getItem("n1") || "");
+   
   }, []);
   useEffect(() => {
+    window.addEventListener("beforeunload", saveText);
     return () => {
       saveText();
+      window.removeEventListener("beforeunload", saveText);
     };
   }, [saveText]);
   const onTextChange = useCallback((evt) => {
@@ -32,6 +35,7 @@ export default function Notes() {
   useInterval(() => {
     saveText();
   }, DELAY);
+
 
   return (
     <Box className="notes-wrapper">
