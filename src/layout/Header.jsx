@@ -17,6 +17,7 @@ const pages = [
   { name: "Notes", path: "/notes" },
   { name: "Brand Price Compare", path: "/brandcompare" },
   { name: "Weather", path: "/weather" },
+  { name: "Create Itinerary", path: "/itinerary" },
 ];
 
 const ResponsiveAppBar = () => {

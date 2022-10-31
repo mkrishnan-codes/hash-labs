@@ -3,6 +3,7 @@ import { lazy } from "react";
 import NotFound from "../features/404/NotFound";
 
 const Weather = lazy(() => import("../features/weather/Weather"));
+const ItineraryMaker = lazy(() => import("../features/itinerarymaker/ItineraryMaker"));
 const BrandCompare = lazy(() =>
   import("../features/brandcompare/BrandCompare")
 );
@@ -47,6 +48,12 @@ export const routes = [
     exact: true,
     inner: true,
     component: Notes,
+  },
+  {
+    path: "/itinerary",
+    exact: true,
+    inner: true,
+    component: ItineraryMaker,
   },
   {
     path: "*",
